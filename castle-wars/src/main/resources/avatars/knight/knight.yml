@@ -1,0 +1,12 @@
+size: [16,16]
+animations:
+  stand:
+    origin: [16,32]
+    frames: 2
+    duration: 5
+    play-mode: LOOP
+  walk:
+    origin: [16,64]
+    frames: 4
+    duration: 0.25
+    play-mode: LOOP

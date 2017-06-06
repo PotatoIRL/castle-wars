@@ -1,0 +1,5 @@
+size: [16,16]
+animations:
+  stand:
+    origin: [16,32]
+    frames: 2
