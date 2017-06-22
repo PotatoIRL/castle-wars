@@ -1,4 +1,4 @@
-package com.phfl.game.cw;
+package com.phfl.game.cw.entities;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;

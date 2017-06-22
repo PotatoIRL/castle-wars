@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.phfl.game.GameWorld;
+import com.phfl.game.cw.entities.Knight;
 import com.phfl.game.physics.PhysicsEngine;
 import com.phfl.game.physics.PlatformerPhysicsEngine;
 
