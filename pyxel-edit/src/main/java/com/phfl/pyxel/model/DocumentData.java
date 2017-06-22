@@ -1,4 +1,4 @@
-package com.phfl.pe.data;
+package com.phfl.pyxel.model;
 
 import java.util.Map;
 

@@ -1,4 +1,4 @@
-package com.phfl.pe.data;
+package com.phfl.pyxel.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

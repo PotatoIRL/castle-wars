@@ -1,4 +1,4 @@
-package com.phfl.pe;
+package com.phfl.pyxel;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.zip.ZipFile;
 import org.apache.commons.io.IOUtils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.phfl.pe.data.DocumentData;
+import com.phfl.pyxel.model.DocumentData;
 
 public class PyxelFile {
   public DocumentData document;

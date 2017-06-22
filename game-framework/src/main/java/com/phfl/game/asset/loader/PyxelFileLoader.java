@@ -1,4 +1,4 @@
-package com.phfl.pe.loader;
+package com.phfl.game.asset.loader;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import com.badlogic.gdx.assets.loaders.FileHandleResolver;
 import com.badlogic.gdx.assets.loaders.SynchronousAssetLoader;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.utils.Array;
-import com.phfl.pe.PyxelFile;
+import com.phfl.pyxel.PyxelFile;
 
 public class PyxelFileLoader
     extends SynchronousAssetLoader<PyxelFile, AssetLoaderParameters<PyxelFile>> {

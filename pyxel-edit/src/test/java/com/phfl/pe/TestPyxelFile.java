@@ -7,6 +7,7 @@ import java.net.URL;
 import org.junit.Test;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.phfl.pyxel.PyxelFile;
 
 public class TestPyxelFile {
   @Test
