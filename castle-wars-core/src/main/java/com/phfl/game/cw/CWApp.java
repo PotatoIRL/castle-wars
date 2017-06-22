@@ -38,6 +38,7 @@ public class CWApp extends ApplicationAdapter {
 
     // load knight
     new Knight(world);
+    // new BaseHuman(world);
   }
 
   @Override
