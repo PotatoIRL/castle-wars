@@ -35,18 +35,6 @@ public class PyxelFile {
 
   public PyxelFile(File file) throws IOException {
     this(new FileInputStream(file));
-    //
-    // ZipFile pyxelFile = new ZipFile(file);
-    //
-    // ZipEntry docDataEntry = pyxelFile.getEntry("docData.json");
-    // ObjectMapper mapper = new ObjectMapper();
-    // document = mapper.readValue(pyxelFile.getInputStream(docDataEntry), DocumentData.class);
-    //
-    // ZipEntry layer0Entry = pyxelFile.getEntry("layer0.png");
-    // this.image = IOUtils.toByteArray(pyxelFile.getInputStream(layer0Entry));
-    // System.out.println(this.image.length);
-    //
-    // pyxelFile.close();
   }
 
   private static File prepareTempFile(byte[] fileBytes) throws IOException {
