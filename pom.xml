@@ -4,7 +4,7 @@
 	<groupId>castle-wars</groupId>
 	<artifactId>castle-wars</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Castle Wars Parent</name>
+	<name>Castle Wars Workspace</name>
 	<packaging>pom</packaging>
 	
 	<modules>
