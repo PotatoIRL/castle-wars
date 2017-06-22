@@ -4,9 +4,15 @@
 	<groupId>castle-wars</groupId>
 	<artifactId>castle-wars</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Castle Wars</name>
+	<name>Castle Wars Parent</name>
 	<packaging>pom</packaging>
-
+	
+	<properties>
+		<java.version>1.8</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+	</properties>
+	
 	<modules>
 		<module>castle-wars-core</module>
 		<module>game-framework</module>
