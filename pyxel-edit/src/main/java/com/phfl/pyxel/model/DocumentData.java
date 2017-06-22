@@ -9,4 +9,5 @@ public class DocumentData {
   public Map<String, AnimationData> animations;
   public TilesetData tileset;
   public String name;
+  public CanvasData canvas;
 }

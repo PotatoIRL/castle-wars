@@ -71,7 +71,7 @@ public class GameRenderingSystem extends IteratingSystem {
       Avatar avatar = avatarMap.get(entityId);
       Body body = bodyMap.get(entityId);
 
-      AnimationMap animations = assetSystem.getAvatarAnimationMap(avatar.name);
+      AnimationMap animations = assetSystem.getAnimationMap(avatar.name);
       Animation animation = animations.get(avatar.stateName);
       TextureRegion image = animation.getKeyFrame(avatar.stateTime);
 
@@ -84,6 +84,7 @@ public class GameRenderingSystem extends IteratingSystem {
       }
     } catch (Exception e) {
       LOGGER.error("Failed to render entity#{}: {}", entityId, e.getMessage());
+      e.printStackTrace();
     }
   }
 

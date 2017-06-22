@@ -22,8 +22,9 @@ public class PyxelFileLoader
   public PyxelFile load(AssetManager assetManager, String fileName, FileHandle file,
       AssetLoaderParameters<PyxelFile> parameter) {
     try {
-      return new PyxelFile(file.file());
+      return new PyxelFile(file.read());
     } catch (IOException e) {
+      e.printStackTrace();
       return null;
     }
   }
@@ -32,7 +33,6 @@ public class PyxelFileLoader
   @Override
   public Array<AssetDescriptor> getDependencies(String fileName, FileHandle file,
       AssetLoaderParameters<PyxelFile> parameter) {
-    Array<AssetDescriptor> dependencies = new Array<>();
-    return dependencies;
+    return null;
   }
 }

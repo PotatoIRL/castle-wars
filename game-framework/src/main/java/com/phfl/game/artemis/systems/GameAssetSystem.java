@@ -5,14 +5,15 @@ import com.phfl.game.GameAssets;
 import com.phfl.game.asset.AnimationMap;
 
 public class GameAssetSystem extends BaseSystem {
+  String animationMapDir = "avatars";
 
-    @Override
-    protected void processSystem() {
+  @Override
+  protected void processSystem() {
 
-    }
+  }
 
-    public AnimationMap getAvatarAnimationMap(String avatarName) {
-        return GameAssets.get(String.format("avatars/%s", avatarName), AnimationMap.class);
-    }
+  public AnimationMap getAnimationMap(String avatarName) {
+    return GameAssets.get(String.format("%s/%s", animationMapDir, avatarName), AnimationMap.class);
+  }
 
 }
