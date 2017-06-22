@@ -7,7 +7,6 @@ import java.io.InputStream;
 
 import org.apache.commons.compress.archivers.zip.ZipArchiveEntry;
 import org.apache.commons.compress.archivers.zip.ZipArchiveInputStream;
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -21,6 +20,10 @@ public class PyxelFile {
     this(new File(path));
   }
 
+  public PyxelFile(File file) throws IOException {
+    this(new FileInputStream(file));
+  }
+
   public PyxelFile(InputStream fileStream) throws IOException {
     ZipArchiveInputStream zis = new ZipArchiveInputStream(fileStream);
     for (ZipArchiveEntry ze; (ze = zis.getNextZipEntry()) != null;) {
@@ -31,15 +34,5 @@ public class PyxelFile {
         image = IOUtils.toByteArray(zis);
       }
     }
-  }
-
-  public PyxelFile(File file) throws IOException {
-    this(new FileInputStream(file));
-  }
-
-  private static File prepareTempFile(byte[] fileBytes) throws IOException {
-    File file = new File("temp.pyxel");
-    FileUtils.writeByteArrayToFile(file, fileBytes);
-    return file;
   }
 }
