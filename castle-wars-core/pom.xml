@@ -4,14 +4,12 @@
 	<groupId>com.phfl</groupId>
 	<artifactId>castle-wars-core</artifactId>
 	<name>Castle Wars Core Game</name>
-
-	<parent>
-		<groupId>castle-wars</groupId>
-		<artifactId>castle-wars</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</parent>
+	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
+		<java.version>1.8</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<gdx.version>1.9.6</gdx.version>
 	</properties>
