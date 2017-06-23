@@ -84,7 +84,6 @@ public class GameRenderingSystem extends IteratingSystem {
       }
     } catch (Exception e) {
       LOGGER.error("Failed to render entity#{}: {}", entityId, e.getMessage());
-      e.printStackTrace();
     }
   }
 

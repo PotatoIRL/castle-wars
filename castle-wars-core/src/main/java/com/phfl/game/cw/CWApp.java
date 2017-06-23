@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.phfl.game.GameWorld;
-import com.phfl.game.cw.entities.Knight;
+import com.phfl.game.cw.entities.BaseHuman;
 import com.phfl.game.physics.PhysicsEngine;
 import com.phfl.game.physics.PlatformerPhysicsEngine;
 
@@ -37,8 +37,7 @@ public class CWApp extends ApplicationAdapter {
     world.loadMap("test-map.tmx");
 
     // load knight
-    new Knight(world);
-    // new BaseHuman(world);
+    new BaseHuman(world);
   }
 
   @Override
