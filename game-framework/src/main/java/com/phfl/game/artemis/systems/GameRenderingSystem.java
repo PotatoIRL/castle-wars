@@ -2,6 +2,9 @@ package com.phfl.game.artemis.systems;
 
 import java.util.Iterator;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.artemis.Aspect;
 import com.artemis.ComponentMapper;
 import com.artemis.systems.IteratingSystem;
@@ -18,8 +21,12 @@ import com.badlogic.gdx.maps.tiled.TiledMapTileLayer.Cell;
 import com.phfl.game.GameWorld;
 import com.phfl.game.artemis.components.Avatar;
 import com.phfl.game.artemis.components.Body;
+import com.phfl.game.asset.Animation;
+import com.phfl.game.asset.AnimationMap;
 
 public class GameRenderingSystem extends IteratingSystem {
+  private static final Logger LOGGER = LoggerFactory.getLogger(GameRenderingSystem.class);
+
   GameAssetSystem assetSystem;
 
   ComponentMapper<Avatar> avatarMap;
@@ -60,18 +67,23 @@ public class GameRenderingSystem extends IteratingSystem {
   }
 
   private void renderEntity(int entityId) {
-    Avatar avatar = avatarMap.get(entityId);
-    Body body = bodyMap.get(entityId);
+    try {
+      Avatar avatar = avatarMap.get(entityId);
+      Body body = bodyMap.get(entityId);
 
-    TextureRegion image = assetSystem.getAvatarAnimationMap(avatar.name).get(avatar.stateName)
-        .getKeyFrame(avatar.stateTime);
+      AnimationMap animations = assetSystem.getAnimationMap(avatar.name);
+      Animation animation = animations.get(avatar.stateName);
+      TextureRegion image = animation.getKeyFrame(avatar.stateTime);
 
-    boolean flip = avatar.flipped;
-    if (body != null) {
-      if (image != null) {
-        batch.draw(image, flip ? body.x2() : body.x(), body.y(), flip ? -body.w() : body.w(),
-            body.h());
+      boolean flip = avatar.flipped;
+      if (body != null) {
+        if (image != null) {
+          batch.draw(image, flip ? body.x2() : body.x(), body.y(), flip ? -body.w() : body.w(),
+              body.h());
+        }
       }
+    } catch (Exception e) {
+      LOGGER.error("Failed to render entity#{}: {}", entityId, e.getMessage());
     }
   }
 
